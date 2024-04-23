@@ -1,0 +1,220 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Interview\\BusinessOps\\BusinessOps\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\data\\entities\\departments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:data\\entities\\departments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\data\\entities\\departmentcompany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:data\\entities\\departmentcompany.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\implementation\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:implementation\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\implementation\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:implementation\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\interfaces\\idepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:interfaces\\idepartmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\implementation\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:implementation\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\models\\employeerequestresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:models\\employeerequestresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 226,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Departments.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Data\\Entities\\Departments.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\Departments.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Data\\Entities\\Departments.cs",
+              "RelativeToolTip": "Data\\Entities\\Departments.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:29:30.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DepartmentService.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Implementation\\DepartmentService.cs",
+              "RelativeDocumentMoniker": "Implementation\\DepartmentService.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Implementation\\DepartmentService.cs",
+              "RelativeToolTip": "Implementation\\DepartmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T09:10:56.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Implementation\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "Implementation\\EmployeeService.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Implementation\\EmployeeService.cs",
+              "RelativeToolTip": "Implementation\\EmployeeService.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAkwBQAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:12:52.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:12:16.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DepartmentController.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "Controllers\\DepartmentController.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAUwDEAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T06:14:07.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CompanyController.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "Controllers\\CompanyController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T05:26:57.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DepartmentCompany.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Data\\Entities\\DepartmentCompany.cs",
+              "RelativeDocumentMoniker": "Data\\Entities\\DepartmentCompany.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Data\\Entities\\DepartmentCompany.cs",
+              "RelativeToolTip": "Data\\Entities\\DepartmentCompany.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T10:28:26.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompanyService.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Implementation\\CompanyService.cs",
+              "RelativeDocumentMoniker": "Implementation\\CompanyService.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Implementation\\CompanyService.cs",
+              "RelativeToolTip": "Implementation\\CompanyService.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAuwEEAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T05:32:12.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmployeeRequestResponse.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Models\\EmployeeRequestResponse.cs",
+              "RelativeDocumentMoniker": "Models\\EmployeeRequestResponse.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Models\\EmployeeRequestResponse.cs",
+              "RelativeToolTip": "Models\\EmployeeRequestResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T08:13:14.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IDepartmentService.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Interfaces\\IDepartmentService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IDepartmentService.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Interfaces\\IDepartmentService.cs",
+              "RelativeToolTip": "Interfaces\\IDepartmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T09:20:37.931Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 174,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

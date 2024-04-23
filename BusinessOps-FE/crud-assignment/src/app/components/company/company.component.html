@@ -1,0 +1,7 @@
+<button type="button" class="btn btn-primary my-3" (click)="router.navigate(['/company','create'])">Create
+    Company</button>
+
+<ul class="list-group">
+    <a class="list-group-item" [routerLink]="['/company','update',dept.id]"
+        *ngFor="let dept of company">{{dept.companyName}}</a>
+</ul>
