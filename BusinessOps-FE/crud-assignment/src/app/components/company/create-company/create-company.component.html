@@ -24,7 +24,9 @@
         <div>
             <button type="button" class="btn btn-success me-3" [disabled]="!companyForm.valid"
                 (click)="createCompany()">{{this.formType}}</button>
-            <button type="button" class="btn btn-secondary" (click)="router.navigate(['/company'])">Cancle</button>
+            <button type="button" class="btn btn-secondary me-3" (click)="router.navigate(['/company'])">Cancel</button>
+            <button type="button" class="btn btn-danger" *ngIf="this.formType == 'Update'"
+                (click)="deleteCompany()">Delete</button>
         </div>
 
     </div>

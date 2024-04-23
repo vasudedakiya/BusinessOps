@@ -1,3 +1,15 @@
 .list-group {
     cursor: pointer;
 }
+
+.table-container {
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.table-container thead {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1;
+}

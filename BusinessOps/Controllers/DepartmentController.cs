@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BusinessOps.Data.Entities;
 using BusinessOps.Interfaces;
 using BusinessOps.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -28,8 +29,13 @@ namespace BusinessOps.Controllers
         [HttpGet("GetDepartmentById")]
         public async Task<IActionResult> GetDepartmentById(int departmentId)
         {
-            DepartmentRequestResponse department = _mapper.Map<DepartmentRequestResponse>(await _departmentService.GetAsync(x => x.Id == departmentId));
-            return Ok(department);
+            Departments department = await _departmentService.GetAsync(x => x.Id == departmentId && x.IsDeleted != true);
+            DepartmentRequestResponse departmentResponse = new();
+
+            if (department != null)
+                departmentResponse = _mapper.Map<DepartmentRequestResponse>(department);
+
+            return Ok(departmentResponse ?? new DepartmentRequestResponse());
         }
 
         [HttpPost("UpsertDepartment")]
@@ -47,7 +53,7 @@ namespace BusinessOps.Controllers
         [HttpGet("GetDepartmentByCompanyId")]
         public async Task<IActionResult> GetDepartmentByCompanyId(int companyId)
         {
-            return Ok(await _departmentService.GetDepartmentByCompanyId(companyId));
+            return Ok(await _departmentService.GetDepartmentsByCompanyId(companyId));
         }
     }
 }

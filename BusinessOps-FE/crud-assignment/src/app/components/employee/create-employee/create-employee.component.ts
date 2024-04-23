@@ -13,10 +13,10 @@ export class CreateEmployeeComponent implements OnInit {
   employeeForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     company: new FormControl(0, [Validators.required]),
-    department: new FormControl(0, [Validators.required])
+    department: new FormControl(0, [Validators.required, Validators.min(1)])
   })
 
-  formType = 'create';
+  formType = 'Create';
   employeeId: number = 0;
   companyList: Company[] = []
   departmentList: Department[] = []
@@ -32,14 +32,14 @@ export class CreateEmployeeComponent implements OnInit {
 
     this.avtivatedRoute.params.subscribe((param) => {
       if (param['id']) {
-        this.formType = 'update';
+        this.formType = 'Update';
         this.employeeId = param['id'];
         this._apiService.getEmployeesById(param['id']).subscribe({
           next: (res: Employee) => {
             this.employeeForm.get('name')?.setValue(res.employeeName)
             this.employeeForm.get('company')?.setValue(res.companyId)
-            this.employeeForm.get('department')?.setValue(res.departmentId)
             this.getDepartmentByCompanyId(res.companyId);
+            this.employeeForm.get('department')?.patchValue(res.departmentId)
           }
         })
       }
@@ -61,6 +61,7 @@ export class CreateEmployeeComponent implements OnInit {
     let name = this.employeeForm.get('name')?.value?.trim() || '';
     if (!this.employeeForm.valid) return;
 
+    debugger;
     const company = this.employeeForm.get('company')?.value || 0;
     const department = this.employeeForm.get('department')?.value || 0;
 
@@ -84,8 +85,9 @@ export class CreateEmployeeComponent implements OnInit {
     });
   }
 
-  getDepartmentByCompanyId(id: number) {
+  async getDepartmentByCompanyId(id: number) {
     this.departmentList = [];
+    this.employeeForm.get('department')?.reset();
     this._apiService.getDepartmentByCompanyId(id).subscribe({
       next: (res: Department[]) => {
         this.departmentList.push(...res);

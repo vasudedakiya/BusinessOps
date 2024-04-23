@@ -20,17 +20,31 @@ namespace BusinessOps.Implementation
             _departmentService = departmentService;
         }
 
+        public async Task<List<CompanyRequestResponse>> GetAllCompanies()
+        {
+            List<CompanyRequestResponse> companies = _mapper.Map<List<CompanyRequestResponse>>(await this.FindAsync(x => x.IsDeleted != true));
+            List<Departments> departments = _departmentService.GetAll().ToList();
+
+            foreach (CompanyRequestResponse company in companies)
+            {
+                List<int> companyDepartmentIds = _businessOpsContext.DepartmentCompany.Where(x => x.CompanyId == company.Id).Select(x => x.DepartmentId).ToList();
+                company.departments = _mapper.Map<List<DepartmentRequestResponse>>(departments.Where(department => companyDepartmentIds.Contains(department.Id)).ToList());
+            }
+            return companies;
+        }
+
+
         public async Task<CompanyRequestResponse> GetCompanyById(int id)
         {
             CompanyRequestResponse company = _mapper.Map<CompanyRequestResponse>(await this.GetAsync(x => x.Id == id));
+            if (company != null)
+            {
+                List<int> companyDepartmentIds = _businessOpsContext.DepartmentCompany.Where(x => x.CompanyId == company.Id).Select(x => x.DepartmentId).ToList();
+                List<Departments> departments = _departmentService.GetAll().ToList();
+                company.departments = _mapper.Map<List<DepartmentRequestResponse>>(departments.Where(department => companyDepartmentIds.Contains(department.Id)).ToList());
+            }
 
-            List<int> companyDepartmentIds = _businessOpsContext.DepartmentCompany.Where(x => x.CompanyId == company.Id).Select(x => x.DepartmentId).ToList();
-
-            List<Departments> departments = _departmentService.GetAll().ToList();
-
-            company.departments = _mapper.Map<List<DepartmentRequestResponse>>(departments.Where(department => companyDepartmentIds.Contains(department.Id)).ToList());
-
-            return company;
+            return company ?? new CompanyRequestResponse();
         }
 
         public async Task<CompanyRequestResponse> UpsertCompany(CompanyUpsertRequest request)
@@ -40,33 +54,39 @@ namespace BusinessOps.Implementation
             if (request.Id != 0)
             {
                 company = await this.GetAsync(x => x.Id == request.Id);
-                company.CompanyName = request.CompanyName;
-                this.Update(company);
+                if (company != null)
+                {
+                    company.CompanyName = request.CompanyName;
+                    company.UpdatedDate = DateTime.UtcNow;
+                    this.Update(company);
 
-                List<DepartmentCompany> existingDepartment = _businessOpsContext.DepartmentCompany.Where(x => x.CompanyId == request.Id).ToList();
-                _businessOpsContext.DepartmentCompany.RemoveRange(existingDepartment);
+                    List<DepartmentCompany> existingDepartment = _businessOpsContext.DepartmentCompany.Where(x => x.CompanyId == request.Id).ToList();
+                    _businessOpsContext.DepartmentCompany.RemoveRange(existingDepartment);
+                }
             }
             else
             {
                 company.CompanyName = request.CompanyName;
+                company.CreatedDate = DateTime.UtcNow;
                 this.Add(company);
             }
             await this.SaveAsync();
 
-            foreach (int departmentId in request.DepartmentIds)
+            if (company!= null && company!.Id > 0)
             {
-                if (departmentId > 0)
+                foreach (int departmentId in request.DepartmentIds)
                 {
-                    DepartmentCompany departmentCompany = new();
-                    departmentCompany.CompanyId = company.Id;
-                    departmentCompany.DepartmentId = departmentId;
-                    departmentCompanys.Add(departmentCompany);
+                    if (departmentId > 0)
+                    {
+                        DepartmentCompany departmentCompany = new();
+                        departmentCompany.CompanyId = company.Id;
+                        departmentCompany.DepartmentId = departmentId;
+                        departmentCompanys.Add(departmentCompany);
+                    }
                 }
+                _businessOpsContext.DepartmentCompany.AddRange(departmentCompanys);
+                await this.SaveAsync();
             }
-            _businessOpsContext.DepartmentCompany.AddRange(departmentCompanys);
-
-
-            await this.SaveAsync();
             return _mapper.Map<CompanyRequestResponse>(company);
         }
 
@@ -75,11 +95,14 @@ namespace BusinessOps.Implementation
             if (id != 0)
             {
                 Companies company = await this.GetAsync(x => x.Id == id);
-                company.IsDeleted = true;
-
-                this.Update(company);
-                await this.SaveAsync();
-                return true;
+                if (company != null)
+                {
+                    company.IsDeleted = true;
+                    company.DeletedDate = DateTime.UtcNow;
+                    this.Update(company);
+                    await this.SaveAsync();
+                    return true;
+                }
             }
             return false;
         }

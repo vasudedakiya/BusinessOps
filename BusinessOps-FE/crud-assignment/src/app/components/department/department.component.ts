@@ -7,21 +7,19 @@ import { Department } from '../../../models/company.model';
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
-  styleUrl: './department.component.css'
+  styleUrls: ['./department.component.css']
 })
 export class DepartmentComponent implements OnInit {
 
   deptForm = new FormGroup({
     dept_name: new FormControl('', [Validators.required]),
-  })
+  });
 
   btnName = 'Create';
   departmentId: number = 0;
   departmentList: Department[] = [];
 
-  constructor(public router: Router,
-    private _apiService: HttpService
-  ) { }
+  constructor(public router: Router, private _apiService: HttpService) { }
 
   ngOnInit(): void {
     this.getAllDepartments();
@@ -35,7 +33,7 @@ export class DepartmentComponent implements OnInit {
       error(err) {
         console.log("err", err);
       }
-    })
+    });
   }
 
   update(id: number, name: string) {
@@ -70,6 +68,19 @@ export class DepartmentComponent implements OnInit {
       error(err) {
         console.log("err", err);
       }
-    })
+    });
+  }
+
+  delete(id: number) {
+    if (confirm('Are you sure you want to delete this department?')) {
+      this._apiService.deleteDepartment(id).subscribe({
+        next: () => {
+          this.getAllDepartments();
+        },
+        error(err) {
+          console.log("err", err);
+        }
+      });
+    }
   }
 }

@@ -16,7 +16,7 @@ export class CreateCompanyComponent implements OnInit {
     department: new FormControl([0], [Validators.required])
   })
 
-  formType = 'create';
+  formType = 'Create';
   companyId: number = 0
   departmentList: Department[] = []
 
@@ -31,7 +31,7 @@ export class CreateCompanyComponent implements OnInit {
 
     this.avtivatedRoute.params.subscribe((param) => {
       if (param['id']) {
-        this.formType = 'update';
+        this.formType = 'Update';
         this.companyId = param['id'];
         this._apiService.getCompanyById(param['id']).subscribe({
           next: (res: Company) => {
@@ -67,7 +67,6 @@ export class CreateCompanyComponent implements OnInit {
       companyName: name,
       departmentIds: departmentArray
     };
-    console.log("Runnnnn");
     this._apiService.upsertCompany(companyData).subscribe({
       next: (res: Company) => {
         this.router.navigate(['/company'])
@@ -77,5 +76,18 @@ export class CreateCompanyComponent implements OnInit {
         this.router.navigate(['/company'])
       }
     });
+  }
+
+  deleteCompany() {
+    this._apiService.deleteCompany(this.companyId).subscribe({
+      next: (res: boolean) => {
+        this.router.navigate(['/company'])
+
+      },
+      error: (err) => {
+        console.log(err);
+        this.router.navigate(['/company'])
+      }
+    })
   }
 }

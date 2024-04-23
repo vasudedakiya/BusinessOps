@@ -10,6 +10,6 @@ namespace BusinessOps.Interfaces
 
         Task<bool> Delete(int id);
 
-        Task<List<DepartmentRequestResponse>> GetDepartmentByCompanyId(int companyId);
+        Task<List<DepartmentRequestResponse>> GetDepartmentsByCompanyId(int companyId);
     }
 }

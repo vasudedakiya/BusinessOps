@@ -10,31 +10,43 @@ namespace BusinessOps.Implementation
     public class EmployeeService : DataRepository<Employees>, IEmployeeService
     {
         private readonly BusinessOpsContext _businessOpsContext;
+        private readonly ICompanyService _companyService;
+        private readonly IDepartmentService _departmentService;
         private readonly IMapper _mapper;
 
-        public EmployeeService(BusinessOpsContext businessOpsContext, IMapper mapper) : base(businessOpsContext)
+        public EmployeeService(BusinessOpsContext businessOpsContext, ICompanyService companyService, IDepartmentService departmentService, IMapper mapper) : base(businessOpsContext)
         {
             _businessOpsContext = businessOpsContext;
+            _companyService = companyService;
+            _departmentService = departmentService;
             _mapper = mapper;
         }
 
         public async Task<EmployeeRequestResponse> UpsertEmployee(EmployeeRequestResponse request)
         {
             Employees employee = new();
-            if (request.Id != 0)
-            {
-                employee = await this.GetAsync(x => x.Id == request.Id);
-                employee = _mapper.Map<Employees>(request);
-                this.Update(employee);
-            }
-            else
-            {
-                employee = _mapper.Map<Employees>(request);
-                this.Add(employee);
-            }
-            await this.SaveAsync();
+            Companies company = await _companyService.GetAsync(x => x.Id == request.CompanyId && x.IsDeleted != true);
+            Departments department = await _departmentService.GetAsync(x => x.Id == request.DepartmentId && x.IsDeleted != true);
 
-            return _mapper.Map<EmployeeRequestResponse>(employee);
+            if (company != null && department != null)
+            {
+                if (request.Id != 0)
+                {
+                    employee = await this.GetAsync(x => x.Id == request.Id);
+                    if (employee != null)
+                    {
+                        employee = _mapper.Map<Employees>(request);
+                        this.Update(employee);
+                    }
+                }
+                else
+                {
+                    employee = _mapper.Map<Employees>(request);
+                    this.Add(employee);
+                }
+                await this.SaveAsync();
+            }
+            return employee != null ? _mapper.Map<EmployeeRequestResponse>(employee) : new EmployeeRequestResponse();
         }
 
         public async Task<bool> Delete(int id)
@@ -42,11 +54,13 @@ namespace BusinessOps.Implementation
             if (id != 0)
             {
                 Employees employees = await this.GetAsync(x => x.Id == id);
-                employees.IsDeleted = true;
-
-                this.Update(employees);
-                await this.SaveAsync();
-                return true;
+                if (employees != null)
+                {
+                    employees.IsDeleted = true;
+                    this.Update(employees);
+                    await this.SaveAsync();
+                    return true;
+                }
             }
             return false;
         }

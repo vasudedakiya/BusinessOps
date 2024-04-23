@@ -21,8 +21,7 @@ namespace BusinessOps.Controllers
         [HttpGet("GetAllCompanies")]
         public async Task<IActionResult> GetAllCompanies()
         {
-            List<CompanyRequestResponse> companies = _mapper.Map<List<CompanyRequestResponse>>(await _companyService.FindAsync(x => x.IsDeleted != true));
-            return Ok(companies);
+            return Ok(await _companyService.GetAllCompanies());
         }
 
         [HttpGet("GetCompanyById")]

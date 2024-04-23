@@ -24,6 +24,10 @@ export class HttpService {
     return this.http.post<Company>((this.apiUrl + 'Company/UpsertCompany'), req);
   }
 
+  deleteCompany(companyId: number): Observable<boolean> {
+    return this.http.post<boolean>(this.apiUrl + `Company/DeleteCompany?id=${companyId}`, null)
+  }
+
   getDepartments(): Observable<Department[]> {
     return this.http.get<Department[]>(this.apiUrl + 'Department/GetAllDepartments')
   }
@@ -36,6 +40,10 @@ export class HttpService {
     return this.http.post<Department>((this.apiUrl + 'Department/UpsertDepartment'), req)
   }
 
+  deleteDepartment(departmentId: number): Observable<boolean> {
+    return this.http.post<boolean>(this.apiUrl + `Department/DeleteDepartment?id=${departmentId}`, null)
+  }
+
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.apiUrl + 'Employee/GetAllEmployees')
   }
@@ -46,6 +54,10 @@ export class HttpService {
 
   upsertEmployee(req: Employee): Observable<Employee> {
     return this.http.post<Employee>((this.apiUrl + 'Employee/UpsertEmployee'), req)
+  }
+
+  deleteEmployee(employeeId: number): Observable<boolean> {
+    return this.http.post<boolean>((this.apiUrl + `Employee/DeleteEmployee?id=${employeeId}`), null)
   }
 
   getDepartmentByCompanyId(id: number): Observable<Department[]> {
