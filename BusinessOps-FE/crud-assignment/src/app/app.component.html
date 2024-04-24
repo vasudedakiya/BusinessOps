@@ -1,6 +1,15 @@
+<!-- <div>
+  <app-dashboard></app-dashboard>
+  <app-loader *ngIf="_httpService.isLoading$ | async"></app-loader>
+  <div class="container" *ngIf="!(_httpService.isLoading$ | async)">
+    <router-outlet />
+  </div>
+</div> -->
+
 <div>
   <app-dashboard></app-dashboard>
-  <div class="container">
-    <router-outlet />
+  <app-loader *ngIf="_httpService.isLoading"></app-loader>
+  <div class="container" [ngClass]="{ 'd-none': _httpService.isLoading }">
+    <router-outlet></router-outlet>
   </div>
 </div>

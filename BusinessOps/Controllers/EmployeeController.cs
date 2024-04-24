@@ -24,6 +24,10 @@ namespace BusinessOps.Controllers
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// Fatch all employee detail with company & department name.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("GetAllEmployees")]
         public async Task<IActionResult> GetAllEmployees()
         {
@@ -39,6 +43,11 @@ namespace BusinessOps.Controllers
             return Ok(employees);
         }
 
+        /// <summary>
+        /// Fatch employee detail (name, company, department) by employee id.
+        /// </summary>
+        /// <param name="employeeId">Employee Id</param>
+        /// <returns></returns>
         [HttpGet("GetEmployeeById")]
         public async Task<IActionResult> GetEmployeeById(int employeeId)
         {
@@ -54,12 +63,22 @@ namespace BusinessOps.Controllers
             return Ok(employeeResponse);
         }
 
+        /// <summary>
+        /// Insert or Update Employee Data.
+        /// </summary>
+        /// <param name="employeeData">Employee Data</param>
+        /// <returns></returns>
         [HttpPost("UpsertEmployee")]
         public async Task<IActionResult> UpsertEmployee(EmployeeRequestResponse employeeData)
         {
             return Ok(await _employeeService.UpsertEmployee(employeeData));
         }
 
+        /// <summary>
+        /// Delete Employee by employee id.(soft delete)
+        /// </summary>
+        /// <param name="id">Employee id</param>
+        /// <returns></returns>
         [HttpPost("DeleteEmployee")]
         public async Task<IActionResult> Delete(int id)
         {

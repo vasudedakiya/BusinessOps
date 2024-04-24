@@ -26,6 +26,7 @@ export class CompanyComponent implements OnInit {
         console.log("CompanyComponent ~ this._apiService.getCompany ~ err:", err)
       }
     });
+
   }
 
   navigateToCreateCompany(): void {
