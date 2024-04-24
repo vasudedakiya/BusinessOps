@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Interview\\BusinessOps\\BusinessOps\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|d:\\interview\\businessops\\businessops\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE83F480-8832-47E2-AB0A-A3DE95708A66}|BusinessOps.csproj|solutionrelative:controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 226,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +35,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CompanyController.cs",
+              "ToolTip": "D:\\Interview\\BusinessOps\\BusinessOps\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "Controllers\\CompanyController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T19:59:59.739Z",
+              "EditorCaption": ""
             }
           ]
         },

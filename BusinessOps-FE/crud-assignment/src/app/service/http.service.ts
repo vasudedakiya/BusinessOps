@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Company, Department, Employee, UpsertCompany } from '../../models/company.model';
 
 @Injectable({
@@ -63,5 +63,4 @@ export class HttpService {
   getDepartmentByCompanyId(id: number): Observable<Department[]> {
     return this.http.get<Department[]>(this.apiUrl + `Department/GetDepartmentByCompanyId?companyId=${id}`);
   }
-
 }
